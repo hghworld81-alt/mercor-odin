@@ -29,6 +29,12 @@ app.get('/statuses', (req, res)=> {
   })
 })
 
+app.get('/health-status', (req,res)=>{
+  res.status(200).json({
+    status:'ok'
+  })
+})
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
