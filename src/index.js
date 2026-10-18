@@ -21,6 +21,14 @@ app.get('/status', (req, res)=> {
   })
 })
 
+app.get('/help', (req, res)=> {
+  res.status(200).json({
+    status: 'ok',
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  })
+})
+
 app.get('/statuses', (req, res)=> {
   res.status(200).json({
     status:'ok',
