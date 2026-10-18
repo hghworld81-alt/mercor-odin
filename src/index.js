@@ -13,6 +13,36 @@ app.get('/health', (req, res) => {
   });
 });
 
+app.get('/status', (req, res)=> {
+  res.status(200).json({
+    status: 'ok',
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  })
+})
+
+app.get('/help', (req, res)=> {
+  res.status(200).json({
+    status: 'ok',
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  })
+})
+
+app.get('/statuses', (req, res)=> {
+  res.status(200).json({
+    status:'ok',
+    uptime:process.uptime(),
+    timestamp:new Date().toISOString()
+  })
+})
+
+app.get('/health-status', (req,res)=>{
+  res.status(200).json({
+    status:'ok'
+  })
+})
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
